@@ -1,5 +1,5 @@
 {
-  "name": "frontend-performance-tool",
+  "name": "ts-package-template",
   "version": "0.1.7",
   "description": "Frontend Performance Tool",
   "main": "lib/index.js",
@@ -37,9 +37,9 @@
   "author": "Himenon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Himenon/frontend-performance-tool/issues"
+    "url": "https://github.com/Himenon/TsPkgTemplate/issues"
   },
-  "homepage": "https://github.com/Himenon/frontend-performance-tool#readme",
+  "homepage": "https://github.com/Himenon/TsPkgTemplate#readme",
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "@types/node": "^10.7.1",
@@ -56,6 +56,5 @@
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^3.0.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
