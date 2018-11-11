@@ -1,3 +1,7 @@
 export const hello = (name: string): string => {
-    return `Hello ${name}`;
-}
+  const params = {
+    hoge: 1,
+    fuga: 2,
+  };
+  return `Hello ${name} ${JSON.stringify(params)}`;
+};
