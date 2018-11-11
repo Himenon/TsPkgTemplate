@@ -1,0 +1,6 @@
+{
+  "linters": {
+    "*.{ts,tsx}": ["prettier --parser typescript --write", "", "git add"],
+    "package.json": ["sort-package-json", "git add"]
+  }
+}
