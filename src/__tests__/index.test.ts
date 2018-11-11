@@ -1,10 +1,10 @@
 jest.dontMock("../index");
 
-import { hello } from '../index'
+import { hello } from "../index";
 
-describe('Hello Test', () => {
-    it('name check', () => {
-        const returnvalue = hello('my-package')
-        expect(returnvalue).toEqual('Hello my-package')
-    })
-})
+describe("Hello Test", () => {
+  it("name check", () => {
+    const returnvalue = hello("my-package");
+    expect(returnvalue).toEqual("Hello my-package");
+  });
+});

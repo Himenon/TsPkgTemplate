@@ -1,7 +1,7 @@
 {
   "extends": [
+    "tslint:recommended",
     "tslint:latest",
-    "tslint-react",
     "tslint-plugin-prettier",
     "tslint-config-prettier"
   ],
@@ -38,14 +38,14 @@
     ],
     "prettier": [true, {
       "useTabs": false,
-      "printWidth": 180,
-      "tabWidth": 4,
-      "singleQuote": true,
+      "printWidth": 140,
+      "tabWidth": 2,
+      "singleQuote": false,
       "trailingComma": "all",
       "jsxBracketSameLine": false,
       "parser": "typescript",
       "bracketSpacing": true,
-      "semi": false
+      "semi": true
     }]
   }
 }
