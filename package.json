@@ -39,6 +39,7 @@
     "server": "node ./lib/server.js",
     "start": "npm run build:watch",
     "test": "npm run cruiser && npm run test:jest",
+    "test:ci": "yarn run test && codecov",
     "test:jest": "jest -c ./jest.config.json",
     "test:watch": "npm run test:jest -- --watch"
   },
@@ -48,6 +49,7 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@types/jest": "^23.3.1",
     "@types/node": "^10.7.1",
+    "codecov": "^3.1.0",
     "dependency-cruiser": "^4.5.0",
     "generate-changelog": "^1.7.1",
     "husky": "^1.1.3",
