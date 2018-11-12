@@ -27,7 +27,6 @@
     "build:watch": "yarn run build -- --watch",
     "clean": "rimraf ./lib",
     "cli": "node ./lib/cli.js",
-    "commitlint": "commitlint",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "cruiser": "dependency-cruiser --validate .dependency-cruiser.json src",
     "format": "prettier --config .prettierrc --write src/*.{ts,tsx}",
