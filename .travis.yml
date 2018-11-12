@@ -12,3 +12,10 @@ node_js:
 script:
   yarn test:ci
 
+jobs:
+  include:
+    - stage: 'Package Update Check'
+      if: type = cron
+      script:
+        - yarn outdated-notifier --api-token $GITHUB_REPO
+
