@@ -1,21 +1,39 @@
 sudo: false
-branches:
-  only:
-    - master
 
 language:
   node_js
 
-node_js:
-  - '8'
+branches:
+  only:
+    - master
 
-script:
-  yarn test:ci
+cache:
+  directories:
+    - node_modules
 
-jobs:
+matrix:
   include:
-    - stage: 'Package Update Check'
-      if: type = cron
-      script:
-        - yarn outdated-notifier --api-token $GITHUB_REPO
+  - name: "Node 8 Test"
+    node_js: "8"
+  - name: "Node 9 Test"
+    node_js: "9"
+  - name: "Node 10 Test"
+    node_js: "10"
+script: yarn test:ci
 
+# jobs:
+#   include:
+#     - stage: test
+#       matrix:
+#         include:
+#         - name: "Node 8 Test"
+#           node_js: "8"
+#         - name: "Node 9 Test"
+#           node_js: "9"
+#         - name: "Node 10 Test"
+#           node_js: "10"
+#       script: yarn test:ci
+#     - stage: 'Package Update Check'
+#       if: type = cron
+#       script:
+#         - yarn outdated-notifier --api-token $GITHUB_REPO

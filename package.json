@@ -1,18 +1,18 @@
 {
-  "name": "typescript-template",
+  "name": "@himenon/typescript-template",
   "version": "0.1.7",
   "description": "Frontend Performance Tool",
   "keywords": [
-    "debug",
+    "template",
     "typescript"
   ],
-  "homepage": "https://github.com/Himenon/TsPkgTemplate#readme",
+  "homepage": "https://github.com/Himenon/typescript-template#readme",
   "bugs": {
-    "url": "https://github.com/Himenon/TsPkgTemplate/issues"
+    "url": "https://github.com/Himenon/typescript-template/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Himenon/FrontendPerformanceTool.git"
+    "url": "git+https://github.com/Himenon/typescript-template.git"
   },
   "license": "MIT",
   "author": "Himenon",
@@ -24,23 +24,23 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "yarn run clean && tsc -p ./tsconfig.build.json",
-    "build:watch": "yarn run build -- --watch",
     "clean": "rimraf ./lib",
     "cli": "node ./lib/cli.js",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "cruiser": "dependency-cruiser --validate .dependency-cruiser.json src",
+    "develop": "yarn run build -- --watch",
     "format": "prettier --config .prettierrc --write src/*.{ts,tsx}",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint:fix": "yarn run lint -- --fix",
-    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && yarn version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && yarn version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && yarn version patch && git push origin && git push origin --tags",
     "server": "node ./lib/server.js",
-    "start": "npm run build:watch",
-    "test": "npm run cruiser && npm run test:jest",
+    "start": "yarn run build:watch",
+    "test": "yarn run cruiser && yarn run test:jest",
     "test:ci": "yarn run test && codecov",
     "test:jest": "jest -c ./jest.config.json",
-    "test:watch": "npm run test:jest -- --watch"
+    "test:watch": "yarn run test:jest -- --watch"
   },
   "dependencies": {},
   "devDependencies": {
