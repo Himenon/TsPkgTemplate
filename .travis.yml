@@ -1,21 +1,42 @@
 sudo: false
-branches:
-  only:
-    - master
 
 language:
   node_js
 
-node_js:
-  - '8'
+branches:
+  only:
+    - master
 
-script:
-  yarn test:ci
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#caching-with-yarn
+cache: yarn
+stages:
+  - name: lint
+    if: branch = master AND type = pull_request
+  - name: compile
+    if: branch = master AND type = pull_request
+  - name: test
+    if: branch = master AND type = pull_request
+  # https://docs.travis-ci.com/user/conditions-v1
+  - name: deploy
+    if: branch = master AND type = push
 
 jobs:
   include:
-    - stage: 'Package Update Check'
-      if: type = cron
-      script:
-        - yarn outdated-notifier --api-token $GITHUB_REPO
-
+    - stage: lint
+      script: yarn run lint
+      node_js:
+      - "10"
+    - stage: compile
+      script: yarn build
+      node_js:
+      - "10"
+    - stage: test
+      script: yarn test
+      node_js:
+      - "8"
+      - "9"
+      - "10"
+    - stage: deploy
+      script: ./scripts/deploy.sh
+      node_js:
+      - "10"
