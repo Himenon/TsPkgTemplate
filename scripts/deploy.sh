@@ -12,5 +12,4 @@
 
 : "After script of Deploy" && {
   cp .npmrc.template .npmrc
-  npx ts-node ./scripts/notify.ts
 }
