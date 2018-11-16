@@ -1,7 +1,7 @@
 #! /bin/bash
 
 : "Prepare SSH Key for Github" && {
-  openssl aes-256-cbc -K $encrypted_xxxx_key -iv $encrypted_xxxx_iv -in travis_key.enc -out ~/.ssh/id_rsa -d
+  openssl aes-256-cbc -K $encrypted_3052b21f39dc_key -iv $encrypted_3052b21f39dc_iv -in travis_key.enc -out ~/.ssh/id_rsa -d
   chmod 600 ~/.ssh/id_rsa
   echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 }
@@ -32,7 +32,7 @@
 }
 
 : "Push Github" && {
-  git remote add upstream https://github.com/Himenon/typescript-template.git
+  git remote add upstream git@github.com:Himenon/typescript-template.git
   git push upstream master
   git push upstream --tags
 }
