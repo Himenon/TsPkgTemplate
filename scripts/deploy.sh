@@ -16,11 +16,6 @@
   yarn build
 }
 
-# TODO: 自動で major, minor, patchを作る
-: "Generate Change Log" && {
-  yarn run ci:version_up:patch
-}
-
 : "Deploy task" && {
   echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
   npm publish
