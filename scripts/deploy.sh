@@ -24,17 +24,15 @@
 : "Deploy task" && {
   echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
   npm publish
-  npx ts-node ./scripts/notify.ts
+  yarn run ci:notify:release
 }
 
 : "After script of Deploy" && {
   cp .npmrc.template .npmrc
 }
 
-: "Push Github" && {
-  git remote add upstream git@github.com:Himenon/typescript-template.git
-  git push upstream master
-  git push upstream --tags
+: "Push Tag" && {
+  git push origin --tags
 }
 
 : "Github Release" && {
