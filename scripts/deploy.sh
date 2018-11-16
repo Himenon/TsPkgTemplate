@@ -14,7 +14,6 @@
 : "Before script of Deploy" && {
   yarn install
   yarn build
-  echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
 }
 
 : "Generate Change Log" && {
@@ -30,6 +29,7 @@
 }
 
 : "Deploy task" && {
+  echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
   npm publish
 }
 
