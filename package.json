@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "yarn run clean && tsc -p ./tsconfig.build.json",
+    "ci:version_up:patch": "changelog -p && git add CHANGELOG.md && git commit -m \"chore(change-log): updated CHANGELOG.md\" && npm version patch",
     "clean": "rimraf ./lib",
     "cli": "node ./lib/cli.js",
     "commitmsg": "commitlint -e $GIT_PARAMS",

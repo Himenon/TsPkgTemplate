@@ -16,21 +16,15 @@
   yarn build
 }
 
-: "Generate Change Log" && {
-  npx changelog -p
-  git add CHANGELOG.md
-  git commit -m "chore(change-log): updated CHANGELOG.md"
-}
-
-# npx ts-node ./scripts/notify.ts
 # TODO: 自動で major, minor, patchを作る
-: "npm package version Up" && {
-  npm version patch
+: "Generate Change Log" && {
+  yarn run ci:version_up:patch
 }
 
 : "Deploy task" && {
   echo '//registry.npmjs.org/:_authToken="${NPM_TOKEN}"' >> .npmrc
   npm publish
+  npx ts-node ./scripts/notify.ts
 }
 
 : "After script of Deploy" && {
@@ -38,8 +32,9 @@
 }
 
 : "Push Github" && {
-  git push "https://${GH_TOKEN}@github.com/Himenon/typescript-template.git" master:ci-test
-  git push origin --tags
+  git remote add upstream https://github.com/Himenon/typescript-template.git
+  git push upstream master
+  git push upstream --tags
 }
 
 : "Github Release" && {
