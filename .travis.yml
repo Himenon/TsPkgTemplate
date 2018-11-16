@@ -43,7 +43,5 @@ jobs:
     - '10'
   - stage: deploy
     script: "./scripts/deploy.sh"
-    after_deploy:
-    - "./scripts/after_sploy.sh"
     node_js:
     - '10'
