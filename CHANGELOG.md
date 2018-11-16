@@ -1,3 +1,11 @@
+#### 0.1.13 (2018-11-16)
+
+##### Continuous Integration
+
+* **script:**
+  *  調整 ([94f27860](https://github.com/Himenon/typescript-template/commit/94f27860d9025f88332c2a85336c2c0b260af9c6))
+  *  githubへのpushscriptの廃止 ([d39e9abf](https://github.com/Himenon/typescript-template/commit/d39e9abf3e56d6531a2838c66a4fd338a5c0b7f5))
+
 #### 0.1.12 (2018-11-16)
 
 ##### Continuous Integration
