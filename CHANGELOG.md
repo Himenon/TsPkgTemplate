@@ -1,3 +1,9 @@
+#### 0.1.10 (2018-11-16)
+
+##### Continuous Integration
+
+* **script:**  githubへpushするscriptの修正2 ([ddacbad2](https://github.com/Himenon/typescript-template/commit/ddacbad23ad293666e07516ed55cf70ad0110b19))
+
 #### 0.1.9 (2018-11-16)
 
 ##### Chores
