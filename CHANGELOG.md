@@ -1,3 +1,9 @@
+#### 0.1.12 (2018-11-16)
+
+##### Continuous Integration
+
+* **script:**  tsがない、対話モードの修正 ([938ceba0](https://github.com/Himenon/typescript-template/commit/938ceba0d79fe7a670c893a59fd9c9289877f3f2))
+
 #### 0.1.11 (2018-11-16)
 
 ##### Chores
