@@ -1,3 +1,9 @@
+#### 0.1.14 (2018-11-16)
+
+##### Continuous Integration
+
+* **script:**  ts-nodeが入っていないので通知がこなかった ([550432ce](https://github.com/Himenon/typescript-template/commit/550432cefd495ece32427868a5951395347d068b))
+
 #### 0.1.13 (2018-11-16)
 
 ##### Continuous Integration
