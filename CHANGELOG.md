@@ -1,3 +1,15 @@
+#### 0.1.11 (2018-11-16)
+
+##### Chores
+
+* **change-log:**  updated CHANGELOG.md ([04b2ca9c](https://github.com/Himenon/typescript-template/commit/04b2ca9cdc821206d9576d83ae1d5dd99af4ed65))
+
+##### Continuous Integration
+
+* **script:**
+  *  githubへpushするscriptの修正3 ([c13c9724](https://github.com/Himenon/typescript-template/commit/c13c9724035043bbfdca19d007b8d5ce3cebda59))
+  *  githubへpushするscriptの修正2 ([ddacbad2](https://github.com/Himenon/typescript-template/commit/ddacbad23ad293666e07516ed55cf70ad0110b19))
+
 #### 0.1.10 (2018-11-16)
 
 ##### Continuous Integration
