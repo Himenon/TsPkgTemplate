@@ -1,3 +1,9 @@
+#### 0.1.15 (2018-11-21)
+
+##### Continuous Integration
+
+* **travis:**  remove fat script ([bc0f7c42](https://github.com/Himenon/typescript-template/commit/bc0f7c420ae33a25a99e8d05875f4753cc9ba400))
+
 #### 0.1.14 (2018-11-16)
 
 ##### Continuous Integration
