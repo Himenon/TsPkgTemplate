@@ -1,3 +1,13 @@
+#### 0.1.16 (2019-01-27)
+
+##### Chores
+
+* **package:**  version up ([6da64c26](https://github.com/Himenon/typescript-template/commit/6da64c262bba712f08a1167ee47434d4b2354538))
+
+##### Continuous Integration
+
+* **travis:**  update settings ([8baf542a](https://github.com/Himenon/typescript-template/commit/8baf542a8dd2c99785c9c56dd475b64e1b2831a0))
+
 #### 0.1.15 (2018-11-21)
 
 ##### Continuous Integration
