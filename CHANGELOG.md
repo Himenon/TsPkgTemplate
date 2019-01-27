@@ -1,3 +1,9 @@
+### 0.2.0 (2019-01-27)
+
+##### New Features
+
+* **typescript-eslint:**  add typescript-eslint ([fcedfb61](https://github.com/Himenon/typescript-template/commit/fcedfb61af45f0d19805725b984093f8a270a1e9))
+
 #### 0.1.16 (2019-01-27)
 
 ##### Chores
