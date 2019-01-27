@@ -26,12 +26,6 @@ yarn upgrade
 yarn publish
 ```
 
-# Options
-
-## Linter
-
-* [tslint-react](https://github.com/palantir/tslint-react)
-
 ## License
 
 MIT
