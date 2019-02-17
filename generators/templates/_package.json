@@ -3,13 +3,17 @@
   "version": "0.0.1",
   "description": "<%= description %>",
   "keywords": [],
-  "homepage": "https://github.com/<%= repository %>#readme",
+  "homepage": "https://github.com/<%= repositoryName %>#readme",
   "bugs": {
-    "url": "https://github.com/<%= repository %>/issues"
+    "url": "https://github.com/<%= repositoryName %>/issues"
   },
-  "repository": "<%= repository %>",
+  "repository": "<%= repositoryName %>",
   "license": "MIT",
-  "author": "Himenon",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorUrl %>"
+  },
   "files": [
     "lib",
     "package.json"

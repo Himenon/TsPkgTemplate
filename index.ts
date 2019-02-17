@@ -5,7 +5,10 @@ import * as ReadPkgUp from "read-pkg-up";
 interface PromptResult {
   projectName: string;
   description: string;
-  repository: string;
+  repositoryName: string;
+  authorName: string;
+  authorEmail: string;
+  authorUrl: string;
 }
 
 interface PromptQuestion extends Generator.Question {
@@ -23,7 +26,7 @@ export = class extends Generator {
   }
 
   public async _prompting(): Promise<PromptResult> {
-    const pkg: ReadPkgUp.Package | undefined = ReadPkgUp.sync().pkg;
+    const pkg: {[k: string]: any} | undefined = ReadPkgUp.sync({ normalize: false }).pkg;
     const questions: PromptQuestion[] = [
       {
         type: "input",
@@ -39,14 +42,30 @@ export = class extends Generator {
       },
       {
         type: "input",
-        name: "repository",
+        name: "repositoryName",
         message: "Repository name",
-        default: pkg && (typeof pkg.repository === "string" ? pkg.repository : pkg.repository && pkg.repository.url),
+        default: pkg && JSON.stringify(pkg.repository),
+      },
+      {
+        type: "input",
+        name: "authorName",
+        message: "Author name",
+        default: pkg && pkg.author && pkg.author.name,
+      },
+      {
+        type: "input",
+        name: "authorEmail",
+        message: "Author email",
+        default: pkg && pkg.author && pkg.author.email,
+      },
+      {
+        type: "input",
+        name: "authorUrl",
+        message: "Profile url",
+        default: pkg && pkg.author && pkg.author.url,
       },
     ]
-    const answers = await this.prompt(questions) as PromptResult;
-    this.log("project name", answers.projectName);
-    return answers;
+    return await this.prompt(questions) as PromptResult;
   }
 
   async init() {
@@ -58,5 +77,6 @@ export = class extends Generator {
     )
     this._mv("_package.json", "package.json");
     this._mv("_README.md", "README.md");
+    this._mv("_LICENSE", "LICENSE");
   }
 };
