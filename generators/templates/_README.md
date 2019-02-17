@@ -1,6 +1,7 @@
 # <%= projectName %>
 
-[![Build Status](https://travis-ci.com/<%= projectName %>.svg?branch=master)](https://travis-ci.com/<%= repositoryName %>)
+[![npm version](https://badgen.net/npm/v/<%= projectName %>)](https://npm.im/<%= projectName %>)
+[![Build Status](https://travis-ci.com/<%= repositoryName %>.svg?branch=master)](https://travis-ci.com/<%= repositoryName %>)
 [![codecov](https://codecov.io/gh/<%= repositoryName %>/branch/master/graph/badge.svg)](https://codecov.io/gh/<%= repositoryName %>)
 [![dependencies Status](https://david-dm.org/<%= repositoryName %>/status.svg)](https://david-dm.org/<%= repositoryName %>)
 [![devDependencies Status](https://david-dm.org/<%= repositoryName %>/dev-status.svg)](https://david-dm.org/<%= repositoryName %>?type=dev)

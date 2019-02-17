@@ -32,7 +32,7 @@ export = class extends Generator {
         type: "input",
         name: "projectName",
         message: "Your project name",
-        default: _s.slugify(this.appname), // Default to current folder name
+        default: pkg && pkg.name || _s.slugify(this.appname), // Default to current folder name
       },
       {
         type: "input",
@@ -98,7 +98,6 @@ export = class extends Generator {
     const devDependencyPackages = [
       "@commitlint/cli",
       "@commitlint/config-conventional",
-      "@slack/client",
       "@types/jest",
       "@types/node",
       "@typescript-eslint/eslint-plugin",
