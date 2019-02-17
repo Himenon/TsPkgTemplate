@@ -95,7 +95,7 @@ export = class extends Generator {
   }
 
   public install() {
-    const devPkgs = [
+    const devDependencyPackages = [
       "@commitlint/cli",
       "@commitlint/config-conventional",
       "@slack/client",
@@ -123,6 +123,6 @@ export = class extends Generator {
       "tslint-plugin-prettier",
       "typescript",
     ];
-    this.yarnInstall(devPkgs, { dev: true })
+    this.yarnInstall(devDependencyPackages, { dev: true })
   }
 };
