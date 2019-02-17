@@ -44,7 +44,7 @@ export = class extends Generator {
         type: "input",
         name: "repositoryName",
         message: "Repository name",
-        default: pkg && JSON.stringify(pkg.repository),
+        default: pkg && pkg.repository,
       },
       {
         type: "input",
@@ -68,15 +68,61 @@ export = class extends Generator {
     return await this.prompt(questions) as PromptResult;
   }
 
-  async init() {
+  public async init() {
     const templateOptions = await this._prompting();
     this.fs.copyTpl(
       `${this.templatePath()}/**`,
       this.destinationPath(),
       templateOptions
     )
+    const dotFiles = [
+      "dependency-cruiser.json",
+      "eslintrc.json",
+      "gitignore",
+      "huskyrc",
+      "lintstagedrc",
+      "npmrc",
+      "npmrc.template",
+      "prettierignore",
+      "prettierrc",
+      "travis.yml",
+      "yarnrc",
+    ]
+    dotFiles.forEach(dotFile => this._mv(`_${dotFile}`, `.${dotFile}`));
     this._mv("_package.json", "package.json");
     this._mv("_README.md", "README.md");
     this._mv("_LICENSE", "LICENSE");
+  }
+
+  public install() {
+    const devPkgs = [
+      "@commitlint/cli",
+      "@commitlint/config-conventional",
+      "@slack/client",
+      "@types/jest",
+      "@types/node",
+      "@typescript-eslint/eslint-plugin",
+      "@typescript-eslint/eslint-plugin-tslint",
+      "@typescript-eslint/parser",
+      "codecov",
+      "dependency-cruiser",
+      "eslint",
+      "generate-changelog",
+      "husky",
+      "jest",
+      "jest-cli",
+      "lint-staged",
+      "prettier",
+      "rimraf",
+      "sort-package-json",
+      "ts-jest",
+      "ts-node",
+      "tslint",
+      "tslint-config-prettier",
+      "tslint-config-standard",
+      "tslint-plugin-prettier",
+      "typescript",
+    ];
+    this.yarnInstall(devPkgs, { dev: true })
   }
 };
