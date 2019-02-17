@@ -1,19 +1,13 @@
 {
   "name": "<%= projectName %>",
   "version": "0.0.0",
-  "description": "typescript-template",
-  "keywords": [
-    "template",
-    "typescript"
-  ],
-  "homepage": "https://github.com/Himenon/typescript-template#readme",
+  "description": "<%= description %>",
+  "keywords": [],
+  "homepage": "https://github.com/<%= repository %>#readme",
   "bugs": {
-    "url": "https://github.com/Himenon/typescript-template/issues"
+    "url": "https://github.com/<%= repository %>/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Himenon/typescript-template.git"
-  },
+  "repository": "<%= repository %>",
   "license": "MIT",
   "author": "Himenon",
   "files": [

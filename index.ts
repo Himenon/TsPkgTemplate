@@ -1,7 +1,11 @@
 import * as Generator from 'yeoman-generator'
+import * as _s from "underscore.string";
+import * as ReadPkgUp from "read-pkg-up";
 
 interface PromptResult {
   projectName: string;
+  description: string;
+  repository: string;
 }
 
 interface PromptQuestion extends Generator.Question {
@@ -19,12 +23,25 @@ export = class extends Generator {
   }
 
   public async _prompting(): Promise<PromptResult> {
+    const pkg: ReadPkgUp.Package | undefined = ReadPkgUp.sync().pkg;
     const questions: PromptQuestion[] = [
       {
         type: "input",
         name: "projectName",
         message: "Your project name",
-        default: this.appname // Default to current folder name
+        default: _s.slugify(this.appname), // Default to current folder name
+      },
+      {
+        type: "input",
+        name: "description",
+        message: "Project description",
+        default: pkg && pkg.description,
+      },
+      {
+        type: "input",
+        name: "repository",
+        message: "Repository name",
+        default: pkg && (typeof pkg.repository === "string" ? pkg.repository : pkg.repository && pkg.repository.url),
       },
     ]
     const answers = await this.prompt(questions) as PromptResult;
@@ -40,5 +57,6 @@ export = class extends Generator {
       templateOptions
     )
     this._mv("_package.json", "package.json");
+    this._mv("_README.md", "README.md");
   }
 };

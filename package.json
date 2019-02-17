@@ -32,10 +32,14 @@
   },
   "homepage": "https://github.com/Himenon/typescript-template#readme",
   "devDependencies": {
+    "@types/read-pkg-up": "^3.0.1",
+    "@types/underscore.string": "^0.0.33",
     "@types/yeoman-generator": "^3.0.2",
     "typescript": "^3.3.3"
   },
   "dependencies": {
+    "read-pkg-up": "^4.0.0",
+    "underscore.string": "^3.3.5",
     "yeoman-generator": "^3.2.0"
   }
 }
