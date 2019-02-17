@@ -3,27 +3,26 @@ const Generator = require("yeoman-generator");
 module.exports = class extends Generator {
     constructor(args, options) {
         super(args, options);
-        this.option("cli", {
-            type: Boolean,
-            description: "hogehogehoge"
-        });
-        this.npmInstall(['lodash']);
     }
-    async prompting() {
-        const answers = await this.prompt([
+    _mv(from, to) {
+        this.fs.move(this.destinationPath(from), this.destinationPath(to));
+    }
+    async _prompting() {
+        const questions = [
             {
                 type: "input",
-                name: "name",
+                name: "projectName",
                 message: "Your project name",
                 default: this.appname
             },
-            {
-                type: "confirm",
-                name: "cool",
-                message: "Would you like to enable the Cool feature?"
-            }
-        ]);
-        this.log("app name", answers.name);
-        this.log("cool feature", answers.cool);
+        ];
+        const answers = await this.prompt(questions);
+        this.log("project name", answers.projectName);
+        return answers;
+    }
+    async init() {
+        const templateOptions = await this._prompting();
+        this.fs.copyTpl(`${this.templatePath()}/**`, this.destinationPath(), templateOptions);
+        this._mv("_package.json", "package.json");
     }
 };

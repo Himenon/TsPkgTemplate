@@ -1,30 +1,44 @@
 import * as Generator from 'yeoman-generator'
 
+interface PromptResult {
+  projectName: string;
+}
+
+interface PromptQuestion extends Generator.Question {
+  type?: "input" | "confirm" | "list" | "rawlist" | "password";
+  name: keyof PromptResult;
+}
+
 export = class extends Generator {
   constructor(args: string|string[], options: {}) {
     super(args, options);
-    this.option("cli", {
-      type: Boolean,
-      description: "hogehogehoge"
-    });
-    this.npmInstall(['lodash']);
   }
-  public async prompting() {
-    const answers = await this.prompt([
+
+  private _mv(from: string, to: string) {
+    this.fs.move(this.destinationPath(from), this.destinationPath(to));
+  }
+
+  public async _prompting(): Promise<PromptResult> {
+    const questions: PromptQuestion[] = [
       {
         type: "input",
-        name: "name",
+        name: "projectName",
         message: "Your project name",
         default: this.appname // Default to current folder name
       },
-      {
-        type: "confirm",
-        name: "cool",
-        message: "Would you like to enable the Cool feature?"
-      }
-    ]);
+    ]
+    const answers = await this.prompt(questions) as PromptResult;
+    this.log("project name", answers.projectName);
+    return answers;
+  }
 
-    this.log("app name", answers.name);
-    this.log("cool feature", answers.cool);
+  async init() {
+    const templateOptions = await this._prompting();
+    this.fs.copyTpl(
+      `${this.templatePath()}/**`,
+      this.destinationPath(),
+      templateOptions
+    )
+    this._mv("_package.json", "package.json");
   }
 };

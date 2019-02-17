@@ -4,7 +4,8 @@
   "description": "Node Library Generator",
   "scripts": {
     "test": "test",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json -w"
   },
   "repository": {
     "type": "git",
