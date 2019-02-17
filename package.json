@@ -1,20 +1,19 @@
 {
-  "name": "@himenon/generator-node-lib",
-  "version": "1.0.0",
-  "description": "Node Library Generator",
+  "name": "@pickel-project/generator-node-lib",
+  "version": "0.0.1",
+  "description": "Node library template generator.",
   "scripts": {
     "test": "test",
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Himenon/typescript-template.git"
-  },
+  "repository": "pickel-project/generator-node-lib",
   "keywords": [
+    "yeoman",
     "node",
     "library",
     "template",
+    "generator",
     "typescript"
   ],
   "files": [
@@ -28,9 +27,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Himenon/typescript-template/issues"
+    "url": "https://github.com/pickel-project/generator-node-lib/issues"
   },
-  "homepage": "https://github.com/Himenon/typescript-template#readme",
+  "homepage": "https://github.com/pickel-project/generator-node-lib#readme",
   "devDependencies": {
     "@types/read-pkg-up": "^3.0.1",
     "@types/underscore.string": "^0.0.33",
@@ -41,5 +40,8 @@
     "read-pkg-up": "^4.0.0",
     "underscore.string": "^3.3.5",
     "yeoman-generator": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
