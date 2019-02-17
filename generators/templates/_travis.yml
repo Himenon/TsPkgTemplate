@@ -5,14 +5,26 @@ branches:
   - master
 cache: yarn
 stages:
+- name: lint
+  if: branch = master AND type = pull_request
 - name: compile
+  if: branch = master AND type = pull_request
+- name: test
   if: branch = master AND type = pull_request
 - name: deploy
   if: branch = master AND type = push
 jobs:
   include:
+  - stage: lint
+    script: yarn run lint
+    node_js:
+    - '10'
   - stage: compile
     script: yarn build
+    node_js:
+    - '10'
+  - stage: test
+    script: yarn run test:ci
     node_js:
     - '10'
   - stage: deploy

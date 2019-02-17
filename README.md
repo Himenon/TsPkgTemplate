@@ -1,31 +1,34 @@
-# typescript-template
+# generator-node-lib
 
-[![Build Status](https://travis-ci.com/Himenon/typescript-template.svg?branch=master)](https://travis-ci.com/Himenon/typescript-template)
-[![codecov](https://codecov.io/gh/Himenon/typescript-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Himenon/typescript-template)
-[![dependencies Status](https://david-dm.org/Himenon/typescript-template/status.svg)](https://david-dm.org/Himenon/typescript-template)
-[![devDependencies Status](https://david-dm.org/Himenon/typescript-template/dev-status.svg)](https://david-dm.org/Himenon/typescript-template?type=dev)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+Node library template generator.
+
+## Features
+
+- typescript
+- jest
+- prettier
+- husky
+- eslint
 
 ## Usage
 
+```
+npm i -g yo @pickel-project/generator-node-lib
+```
+
+```
+yo @pickel-project/generator-node-lib
+```
+
+## Development
+
 ```sh
-yarn install
-yarn start
-```
-
-## Update
-
-```sh
-yarn outdated
-yarn upgrade
-```
-
-## Publish
-
-```
-yarn publish
+git clone https://github.com/pickel-project/generator-node-lib.git
+yarn
+yarn run build
+yarn link
 ```
 
 ## License
 
-MIT
+MIT &copy; [Himenon](https://github.com/Himenon)
