@@ -19,12 +19,12 @@ Node library template generator.
 
 ## Usage
 
-```
+```sh
 npm i -g yo @pickel-project/generator-node-lib
 ```
 
-```
-yo @pickel-project/generator-node-lib
+```sh
+yo @pickel-project/node-lib
 ```
 
 ## Development
