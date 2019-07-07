@@ -1,6 +1,6 @@
 {
   "name": "@himenon/generator-node-lib",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Node library template generator.",
   "scripts": {
     "test": "test",
